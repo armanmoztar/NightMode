@@ -1,77 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Night Mode</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:ital@1&display=swap" rel="stylesheet">
+
 </head>
 <style>
-    h1 {
-        font-family: 'Lato';
+    .popup {
+        min-width: 100px;
+        min-height: 100px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        padding: 1rem;
     }
-    
-.dark_grey {
-    color:darkslategrey
-}
-.blue {
-    color: #588BE4;
-}
-p, 
-.button {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-}
-.button {
-    background-color: aqua;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 4rem;
-    border-radius: 4.5rem;
-    animation: backgroundYellow 1s infinite;
-    cursor: pointer;
-}
-    .row {
-    padding: 0 0.25rem;
-    pointer-events: none;
-}
+
+    h1 {
+        font-size: 1.5rem;
+        font-family: "Nunito";
+        text-align: center;
+
+    }
+
+    .night {
+        color: #40798a;
+    }
+
+    .blue {
+        color: #588BE4;
+    }
+
+    p {
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 0.75rem;
+    }
+
+    .button {
+        background-color: #40798a;
+        position: relative;
+        text-align: center;
+        height: 2rem;
+        width: 4rem;
+        border-radius: 25px;
+        transition: 1s;
+        font-family: "Raleway", sans-serif;
+    }
+
+    .half {
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
     .circle {
         position: absolute;
         top: 0;
         left: 0;
-        height: 2rem;
+        height: 32px;
+        width: 32px;
         border-radius: 50%;
-        background-color: #588BE4;
+        background-color: #163642;
         pointer-events: none;
+        transition: 0.5s;
+
     }
-    
 
+    @keyframes transformToBlue {
+        0% {
+            background-color: #163642;
+        }
 
-    /* animations */
+        100% {
+            background-color: #8ABFF0;
+        }
+    }
 
-  @keyframes 
-  from {
+    @keyframes transformToBlack {
+        0% {
+            background-color: #163642;
+        }
 
-  }
+        100% {
+            background-color: #40798a;
+        }
+    }
+
+    @keyframes moveCircleRight {
+        0% {
+            left: 0;
+            transform: translateX(0);
+            background-color: #163642;
+        }
+
+        100% {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: #588BE4;
+        }
+    }
+
+    @keyframes moveCircleLeft {
+        0% {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: #588BE4;
+        }
+
+        100% {
+            left: 0;
+            transform: translateX(0);
+            background-color: #163642;
+        }
+    }
 </style>
+
 <body>
-    <h1><span class="dark_grey">Night<span class="blue">Mode<div class="io"></div></span></span> </h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Magnam quo velit corporis distinctio delectus cum in 
-        corrupti eius hic nisi. Ea ut aperiam molestiae 
-        neque minus nobis ipsa esse sapiente.
+    <div class="popup">
+        <h1> <span class="night">Night</span><span class="blue">Mode</span></h1>
         <div class="button">
-            <div class="row">On</div>
-            <div class="row">Off</div>
+            <div class="half" style="left: 5px;">On</div>
+            <div class="half" style="right: 5px; text-align: right;">Off</div>
+            <div class="circle"></div>
         </div>
-    </p>
+    </div>
+
+    <script src="./popup.js">
+    </script>
+
 </body>
-<script src="./popup.js"></script>
+
 </html>

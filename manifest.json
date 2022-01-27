@@ -1,16 +1,16 @@
 {
-    "name": "Dark View.io",
-    "description": "Switch to Dark Mode for an easier reading at night",
+    "name": "NightMode",
     "version": "1.0.0",
     "manifest_version": 2,
+    "description": "Switch to Nitgh Mode for a darker view of web pages ",
     "background": {
         "scripts": [
             "popup.js"
         ],
-        "persisten": true
+        "persistent": true
     },
     "browser_action": {
-        "default_title": "Dark View.io",
+        "default_title": "NightMode",
         "default_popup": "popup.html"
     },
     "permissions": [
