@@ -3,10 +3,10 @@ if (document.querySelector(".popup")) {
     const circle = document.querySelector(".circle")
     let buttonOn = false;
     function dark() {
-        document.body.style.filter = "dark(1) hue-rotate(180deg)";
+        document.body.style.filter = "invert(1) hue-rotate(180deg)";
         let media = document.querySelectorAll("img, picture, video");
         media.forEach((mediaItem) => {
-            mediaItem.style.filter = "dark(1) hue-rotate(180deg)"
+            mediaItem.style.filter = "invert(1) hue-rotate(180deg)"
         })
     }
     button.addEventListener("click", () => {
@@ -21,7 +21,7 @@ if (document.querySelector(".popup")) {
         }
         else {
             buttonOn = false;
-            button.style.animation = "transformToBlack 0.5s ease-in-out 0s forwards"
+            button.style.animation = "transformToWhite 0.5s ease-in-out 0s forwards"
             circle.style.animation = "moveCircleLeft 0.5s ease-in-out 0s forwards"
             chrome.tabs.executeScript({
                 file: 'appOff.js'
