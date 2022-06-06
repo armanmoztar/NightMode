@@ -5,50 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Night Mode</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&family=Lato&family=Nunito+Sans:ital@1&display=swap" rel="stylesheet">
 
 </head>
 <style>
     .popup {
-        min-width: 100px;
-        min-height: 100px;
-        background: #ecdddd;
+        min-width: 344px;
+        min-height: 170px;
+        background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         padding: 1rem;
     }
 
     h1 {
-        font-size: 1.5rem;
-        font-family: "Nunito";
+        font-size: 1.8rem;
+        font-family: 'Hind Madurai', sans-serif;
+        font-family: 'Lato', sans-serif;
+        font-family: 'Nunito Sans', sans-serif;
         text-align: center;
 
     }
 
-    .night {
-        color: #40798a;
+    .yellow {
+        color: #f5e60f;
     }
 
     .blue {
-        color: #588BE4;
+        color: #2452a1;
     }
 
     p {
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 0.75rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.0rem;
+        text-align: center;
     }
 
     .button {
-        background-color: #40818a;
+        background-color: #FDFCA3;
+        margin: auto;
         position: relative;
-        text-align: center;;
         height: 2rem;
         width: 4rem;
         border-radius: 25px;
-        transition: 0.6s;
+        transition: 1s;
+        font-family: "Lato", sans-serif;
         
     }
 
@@ -67,29 +71,29 @@
         height: 32px;
         width: 32px;
         border-radius: 50%;
-        background-color: #c29ec5;
+        background-color: rgb(255, 213, 0);
         pointer-events: none;
-        transition: 0.5s;
+        transition: 1s;
 
     }
 
     @keyframes transformToBlue {
         0% {
-            background-color: #dce7eb;
+            background-color: #FDFCA3;
         }
 
         100% {
-            background-color: #8ABFF0;
+            background-color: #628eb8;
         }
     }
 
-    @keyframes transformToWhite {
+    @keyframes transformToYellow {
         0% {
-            background-color: #8ABFF0;
+            background-color: #628eb8;
         }
 
         100% {
-            background-color: #dce7eb;
+            background-color: #FDFCA3;
         }
     }
 
@@ -97,13 +101,13 @@
         0% {
             left: 0;
             transform: translateX(0);
-            background-color: #dce7eb;
+            background-color: rgb(255, 213, 0);
         }
 
         100% {
             left: 100%;
             transform: translateX(-100%);
-            background-color: #588BE4;
+            background-color: #275ebb;
         }
     }
 
@@ -111,20 +115,24 @@
         0% {
             left: 100%;
             transform: translateX(-100%);
-            background-color: #588BE4;
+            background-color: #275ebb;
         }
 
         100% {
             left: 0;
             transform: translateX(0);
-            background-color: #dce7eb;
+            background-color: rgb(255, 213, 0);
         }
     }
 </style>
 
 <body>
     <div class="popup">
-        <h1> <span class="night">Night</span><span class="blue">Mode</span></h1>
+        <h1> <span class="yellow">Night</span><span class="blue">Mode</span></h1>
+        <p>
+            Switch seamlessly from dark mode to light mode while viewing web pages
+        </p>
+
         <div class="button">
             <div class="half" style="left: 5px;">On</div>
             <div class="half" style="right: 5px; text-align: right;">Off</div>

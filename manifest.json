@@ -1,21 +1,24 @@
 {
-    "name": "PostureFix",
-    "version": "1.0.0",
-    "manifest_version": 2,
-    "description": "Tired o to Nitgh Mode for a darker view of web pages ",
-    "background": {
-        "scripts": [
-            "popup.js"
-        ],
-        "persistent": true
+    "name": "NightMode",
+    "version": "1.1",
+    "description": "Switch seamlessly from dark mode to light mode while viewing web pages",
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["popup.js"]
+    }],
+    "icons": {
+        "18": "images/icon18.png",
+        "32": "images/icon32.png",
+        "128": "images/icon128.png"
     },
-    "browser_action": {
-        "default_icon": "icon.png",
+    "action": {
+        "default_icon": "images/icon.png",
         "default_popup": "popup.html"
     },
     "permissions": [
-        "https://*/*",
-        "http://*/*",
-        "tabs"
-    ]
+        "scripting",
+        "tabs",
+        "activeTab"
+    ],
+    "manifest_version": 3
 }
